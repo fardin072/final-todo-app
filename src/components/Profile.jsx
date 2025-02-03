@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { TextField, Button, Container, Box, Typography, Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { PieChart } from "@mui/icons-material";
 
 const Profile = () => {
-    const dashboardClick = () =>{
+    
+
+    const dashboardClick = () => {
         navigate("/dashboard");
     }
     const [user, setUser] = useState({
@@ -98,11 +101,11 @@ const Profile = () => {
 
     return (
         <Container maxWidth="sm">
-            
+
             <Box mt={5} p={3} boxShadow={3} borderRadius={2} bgcolor="white">
-            <div className="flex flex-col gap-3 mb-4">
-                <Button variant="contained" color="secondary"  onClick={dashboardClick}>Dashboard</Button>
-            </div>
+                <div className="flex flex-col gap-3 mb-4">
+                    <Button variant="contained" color="secondary" onClick={dashboardClick}>Dashboard</Button>
+                </div>
                 <Typography variant="h5" textAlign={"center"} gutterBottom>
                     User Profile
                 </Typography>
