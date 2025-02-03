@@ -79,6 +79,10 @@ This section involves enhancing the existing Todo app by adding the following fe
 
 ### Steps to Run Locally:
 
-1. Clone the repository:
+1. My Github repository:
    ```bash
-   git clone https://github.com/selen0phile/todo-app.git
+   https://github.com/fardin072/final-todo-app.git
+
+2. Listify Live Link:
+   ```bash
+   https://listify-v1.netlify.app/
