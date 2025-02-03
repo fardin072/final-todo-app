@@ -1,7 +1,24 @@
 # Listify - Todo App
 
 ## 🚀 ReactJS Assignment
+---
+## Installation
 
+### Prerequisites:
+- Node.js
+- npm (Node Package Manager)
+
+### Steps to Run Locally:
+
+1. My Github repository:
+   ```bash
+   https://github.com/fardin072/final-todo-app.git
+
+2. Listify Live Link:
+   ```bash
+   https://listify-v1.netlify.app/
+
+---
 ### ⌛ Part-1: Implement a Stopwatch
 In this section, you will implement a simple stopwatch. 
 
@@ -13,7 +30,7 @@ In this section, you will implement a simple stopwatch.
 This section involves enhancing the existing Todo app by adding the following features:
 
 #### 🔗 API Documentation:
-- [API Docs](http://3.109.211.104:8001/docs)
+- [API Docs](https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/docs)
 
 #### 🔗 Project Repository:
 - [Project Repo](https://github.com/selen0phile/todo-app)
@@ -71,18 +88,3 @@ This section involves enhancing the existing Todo app by adding the following fe
 
 ---
 
-## Installation
-
-### Prerequisites:
-- Node.js
-- npm (Node Package Manager)
-
-### Steps to Run Locally:
-
-1. My Github repository:
-   ```bash
-   https://github.com/fardin072/final-todo-app.git
-
-2. Listify Live Link:
-   ```bash
-   https://listify-v1.netlify.app/

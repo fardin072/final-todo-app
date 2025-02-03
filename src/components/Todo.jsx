@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 
 export function Todo({ title, is_completed, priority, id, updateTodos }) {
     async function deleteClick() {
-        const r = await fetch("http://3.109.211.104:8001/todo/" + id, {
+        const r = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todo/" + id, {
             method: "DELETE"
         })
         const j = await r.json();

@@ -25,7 +25,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchTasks = async () => {
             try {
-                const response = await fetch("http://3.109.211.104:8001/todos");
+                const response = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todos");
                 if (!response.ok) throw new Error("Failed to fetch tasks");
                 const data = await response.json();
                 setTasks(data);
@@ -49,7 +49,7 @@ const Dashboard = () => {
         };
 
         try {
-            const response = await fetch("http://3.109.211.104:8001/todo", {
+            const response = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todo", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newTask),
@@ -76,7 +76,7 @@ const Dashboard = () => {
         const updatedTask = { ...taskToUpdate, is_completed: !taskToUpdate.is_completed };
 
         try {
-            const response = await fetch(`http://3.109.211.104:8001/todo/${id}`, {
+            const response = await fetch(`https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todo/${id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedTask),
@@ -92,7 +92,7 @@ const Dashboard = () => {
     const deleteTask = async (id) => {
         setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
         try {
-            await fetch(`http://3.109.211.104:8001/todo/${id}`, { method: "DELETE" });
+            await fetch(`https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todo/${id}`, { method: "DELETE" });
         } catch (error) {
             console.error("Error deleting task:", error);
         }

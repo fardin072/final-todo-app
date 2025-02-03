@@ -25,7 +25,7 @@ const Profile = () => {
 
         if (storedUsername) {
             // Dynamically build the API URL
-            const apiUrl = `http://3.109.211.104:8001/profile/${storedUsername}`;
+            const apiUrl = `https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/profile/${storedUsername}`;
 
             // Fetch user data from the API based on the username
             fetch(apiUrl)
@@ -61,7 +61,7 @@ const Profile = () => {
 
     const handleSave = () => {
         // Update the user profile in the API
-        const apiUrl = `http://3.109.211.104:8001/profile/${user.username}`;
+        const apiUrl = `https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/profile/${user.username}`;
 
         fetch(apiUrl, {
             method: "PUT",  // Use PUT method for updating data

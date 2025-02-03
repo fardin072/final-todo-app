@@ -19,7 +19,7 @@ function Login() {
             "username": username,
             "password": pass
         }
-        const r = await fetch("http://3.109.211.104:8001/login", {
+        const r = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

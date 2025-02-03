@@ -109,7 +109,7 @@ function Counter() {
     const [message, setMessage] = useState("Loading ...");
     async function initialize() {
       // fetch data
-      const response = await fetch("http://3.109.211.104:8001/message");
+      const response = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/message");
       const jsonData = await response.json();
       console.log(jsonData);
       setMessage(jsonData.message);
