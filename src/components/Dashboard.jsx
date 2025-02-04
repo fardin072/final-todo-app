@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button, TextField, List, ListItem, ListItemText, IconButton, MenuItem, Select, FormControl, Checkbox } from "@mui/material";
 import { Delete } from "@mui/icons-material";
 import { ToastContainer, toast } from "react-toastify";
@@ -6,6 +6,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Stopwatch from "./Stopwatch";
 import Countdown from "./Countdown";
 import { useNavigate } from "react-router-dom";
+import { Doughnut } from "react-chartjs-2";
+import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
+Chart.register(ArcElement, Tooltip, Legend);
+
 
 const Dashboard = () => {
     const username = localStorage.getItem("username");
@@ -18,7 +22,9 @@ const Dashboard = () => {
     const [filterPriority, setFilterPriority] = useState("");
     const [sortBy, setSortBy] = useState("");
     const navigate = useNavigate();
-    const profileClick = () =>{
+    const chartRef = useRef(null);
+
+    const profileClick = () => {
         navigate("/profile");
     }
 
@@ -35,6 +41,21 @@ const Dashboard = () => {
         };
         fetchTasks();
     }, []);
+    const completedTasks = tasks.filter(task => task.is_completed).length;
+    const incompleteTasks = tasks.length - completedTasks;
+
+
+    const pieData = {
+        labels: ["Completed", "Incomplete"],
+        datasets: [
+            {
+                data: [completedTasks, incompleteTasks],
+                backgroundColor: ["#4caf50", "#f44336"],
+                hoverBackgroundColor: ["#66bb6a", "#e57373"],
+            },
+        ],
+    };
+
 
     const addTask = async () => {
         if (task.trim() === "" || deadline === "") return;
@@ -128,6 +149,12 @@ const Dashboard = () => {
             <div className="flex flex-col gap-3 mb-4">
                 <Button variant="contained" color="error" onClick={logoutClick}>Logout</Button>
             </div>
+            <div className="flex justify-center mb-6">
+                <div className="w-64 h-64">
+                    <Doughnut data={pieData} ref={chartRef} />
+                </div>
+            </div>
+
             <Stopwatch />
             <div className="flex flex-col gap-3 mb-4">
                 <TextField fullWidth label="Add a task" value={task} onChange={(e) => setTask(e.target.value)} />
